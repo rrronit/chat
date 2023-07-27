@@ -29,7 +29,7 @@ console.log("hi")
 
 app.use(
   cors({
-    origin: "https://chat-app-kjvv.onrender.com",
+    origin: true,
     credentials: true,
   })
 );
