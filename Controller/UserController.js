@@ -119,22 +119,19 @@ exports.verifyUser = asyncHandler(async (req, res, next) => {
   
   
   const { token } = req.cookies;
-  console.log(req.cookies)
-  console.log(req.cookie)
-  console.log(token)
-  
+  console.log(req)
   if (!token) {
-    return next(new ErrorHandler("token not found", 500));
+    return next(new ErrorHandler("token not found", 301));
   }
 
   const id = jwt.verify(token, process.env.JWT_SECRET_KEY);
   if (!id) {
-    return next(new ErrorHandler("token is wrong", 500));
+    return next(new ErrorHandler("token is wrong", 301));
   }
 
   const user = await verifiedUser.findById(id.id);
   if (!user) {
-    return next(new ErrorHandler("User not found", 500));
+    return next(new ErrorHandler("User not found", 301));
   }
 
   res.status(201).json({
