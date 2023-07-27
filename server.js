@@ -29,7 +29,7 @@ db();
 
 app.use(
   cors({
-    origin: "https://chat-front-two.vercel.app/",
+    origin: "https://chat-front-two.vercel.app",
     credentials: true,
   })
 );
