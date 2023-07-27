@@ -25,11 +25,11 @@ const Error = require("./Middleware/Error");
 const messages = require("./Schema/messageSchema");
 
 db();
-console.log("hi")
+
 
 app.use(
   cors({
-    origin: true,
+    origin: "http://localhost:5173",
     credentials: true,
   })
 );
