@@ -6,7 +6,7 @@ const socketIO = require("socket.io");
 const cookieParser = require("cookie-parser");
 
 const io = socketIO(server);
-const cors = require("cors")({origin:true});
+const cors = require("cors");
 
 process.on("uncaughtException", (err) => {
   console.log(err);
