@@ -21,7 +21,7 @@ const port = process.env.port  || 5000;
 const userRoute = require("./Routes/UserRoutes");
 const messageRoute=require("./Routes/messageRoutes")
 const db = require("./config/db");
-const Error = require("./middleware/Error");
+const Error = require("./Middleware/Error");
 const messages = require("./Schema/messageSchema");
 
 db();
