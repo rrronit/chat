@@ -116,7 +116,13 @@ exports.logoutUser = asyncHandler(async (req, res, next) => {
 });
 
 exports.verifyUser = asyncHandler(async (req, res, next) => {
+  
+  
   const { token } = req.cookies;
+  console.log(req.cookies)
+  console.log(req.cookie)
+  console.log(token)
+  
   if (!token) {
     return next(new ErrorHandler("token not found", 500));
   }
