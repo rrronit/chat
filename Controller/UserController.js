@@ -40,7 +40,7 @@ exports.registerUser = asyncHandler(async (req, res, next) => {
 exports.verifyOTP = asyncHandler(async (req, res, next) => {
   const { Email, OTP } = req.body;
   const user = await verifiedUser.findOne({
-    Email: Email,
+    Email: Email.toLowerCase(),
     Verified: false,
     OTPExpireTime: { $gt: Date.now() },
   });
