@@ -29,7 +29,7 @@ db();
 
 app.use(
   cors({
-    origin: "https://ronit.live",
+    origin: "https://www.ronit.live",
     credentials: true,
   })
 );
